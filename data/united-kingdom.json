@@ -1,0 +1,12 @@
+{
+	"Order" : "1",
+	"Active" : "Null",
+	"Deaths" : "2",
+	"Confirmed" : "1",
+	"Recovered" : "Null",
+	"Vaccinated" : "3",
+	"Date" : "0",
+	"Source" : "Data is sourced from [Public Health England](https://www.gov.uk/government/publications/covid-19-track-coronavirus-cases).",
+	"URL" : "https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=overview&structure={%22date%22:%22date%22,%22Cases%22:%22cumCasesByPublishDate%22,%22Deaths%22:%22cumDeaths28DaysByPublishDate%22,%22Vaccines%22:%22cumPeopleVaccinatedFirstDoseByPublishDate%22}&format=csv",
+	"DateForm" : "%Y-%m-%d"
+}

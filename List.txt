@@ -1,0 +1,1 @@
+Covbot currently supports... a lot of countries. A list of countries and codes is provided below, but you can also use "WORLD" to get global statistics.

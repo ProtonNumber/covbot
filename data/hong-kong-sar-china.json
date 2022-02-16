@@ -1,0 +1,12 @@
+{
+	"Order" : "-1",
+	"Active" : "Null",
+	"Deaths" : "6",
+	"Confirmed" : "2",
+	"Recovered" : "7",
+	"Vaccinated" : "Null",
+	"Date" : "0",
+	"Source" : "Data is sourced from the HK Department of Health using data.gov.hk.",
+	"URL" : "http://www.chp.gov.hk/files/misc/latest_situation_of_reported_cases_covid_19_eng.csv",
+	"DateForm" : "%d/%m/%Y"
+}

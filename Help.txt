@@ -1,0 +1,29 @@
+**Supported Locales**
+Covbot currently works in a lot of places. Type /cb list for a complete list, along with their ISO2 codes.
+
+**Admin Commands**
+To prevent people from using Covbot for spam these commands are limited to server admins: ```
+/cb subscribe (Country) (Time) (Language (Optional))      Subscribes a channel to daily Covbot updates. 
+/cb unsubscrine (Country) (Time)                          Unsubscribes a channel from daily Covbot updates. ```
+Where:
+Country is a country's 2 character ISO code, or Top Level Domain. You can also use "world" for global updates.
+Time is the hour in UTC when you want to recieve updates.
+Language defaults to a suitable local language, but you can use a 2 charater ISO code to specify a language here. The machine translations are a bit dodgy, so feel free to get in touch with corrections. 
+You can also DM these to Covbot if you want daily Covbot updates in your DMs.
+
+**Normal Commands**
+These commands are available to all users: ```
+/cb update (Country) (Language (Optional))   Posts todays covbot update for the desired locale.
+/cb help               			     Sends a copy of these docs to the user
+/cb list                                     Sends a list of available countries to the user```These commands also work in DMs.
+
+**Add Covbot To A Server**
+Click the link below to add Covbot to your server:
+https://discordapp.com/api/oauth2/authorize?client_id=697488300247875656&permissions=18432&scope=bot to add Covbot to your server
+
+**Feedback**
+Want to get in touch with the dev? Message Will#3434
+
+**Attribution** 
+Icons made by Freepik from www.flaticon.com:
+www.flaticon.com/authors/freepik
