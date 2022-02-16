@@ -12,6 +12,12 @@ from datetime import datetime
 from time import time
 from translate import Translator
 
+## Add API keys in a less cursed way
+ADMIN_UUID = 0 				# The discord user id of the person maintaining the bot
+DISCORD_API_KEY = 0			# The API key for the bot
+ADMIN_EMAIL = ""			# The admin's email, which translator uses as an API key
+NEWSAPI_KEY = 0				# The API key for newsAPI
+
 CountryData = {}
 TranslateCache = {}
 EmbedCache = {}
@@ -27,7 +33,7 @@ Debug = False
 def HasAdmin(User, Channel):
     if type(Channel).__name__ == "DMChannel":
         return True
-    elif User.id == /*ADMIN*/ or User.id == /*ADMIN*/:
+    elif User.id == ADMIN_UUID:
         return True
     elif Channel.permissions_for(User).administrator:
         return True
@@ -67,7 +73,7 @@ def CacheTranslate(lang, string, save = True):
         if string in TranslateCache[lang]:
             out = TranslateCache[lang][string] # If the translation is in the cache, just swap it out
         else:                                  # Otherwise, send it tp be translated
-            translator = Translator(lang.replace("_", "-"),email = "/*ADMIN*/") 
+            translator = Translator(lang.replace("_", "-"),email = ADMIN_EMAIL) 
             out = translator.translate(string)
             if "MYMEMORY WARNING" not in out:  # If we've gone over our translation limit then default to english
                 if save:                       # Some strings aren't worth caching. Dont cache them.
@@ -234,7 +240,7 @@ def CreateUpdateEmbed(Country, Language = "en"):
         
     DateStr = format_date(format = "full" ,date = Now.astimezone(timezone(Timezone)), locale = locale)
 
-    News = GetCacheJSON("http://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=[APIKEY]")
+    News = GetCacheJSON("http://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=" + NEWSAPI_KEY)
     
     # This entire chunck of code is just translating and packaging the strings
 
@@ -502,20 +508,17 @@ async def on_message(message):
         elif Content == "/cb help":
             await Author.send(content = HelpText)
             await Channel.send(content = "We've sent you the documentation.")
-        elif Content == "/cb debug start" and Author.id == 260856697382371340:
+        elif Content == "/cb debug start" and Author.id == ADMIN_UUID:
             await Author.send("Starting!")
             await Main()
-        elif Content == "/cb debug loadfiles" and Author.id == 260856697382371340:
+        elif Content == "/cb debug loadfiles" and Author.id == ADMIN_UUID:
             LoadFiles()
             await Author.send("Reloading!")
 
 LoadFiles()
 ListGen()
- 
-if Debug:
-    client.run("DEBUG CLIENT KEY")
-else:
-    client.run("ACTUAL CLIENT KEY")
+
+client.run(DISCORD_API_KEY)
 
 
 
